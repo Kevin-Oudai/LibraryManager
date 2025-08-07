@@ -1,37 +1,42 @@
 #include "Book.h"
 
-
-Book::Book(int id, const std::string& t, const std::string& a)
-	: bookID(id), title(t), author(a), status(true)
+Book::Book(int id, const std::string& bookTitle, const std::string& bookAuthor)
+        : bookID(id), title(bookTitle), author(bookAuthor), available(true)
 {
 }
 
+// Mark the book as checked out by setting its availability to false.
 void Book::checkout()
 {
-	status = false;
+        available = false;
 }
 
+// Mark the book as returned by setting its availability to true.
 void Book::checkin()
 {
-	status = true;
+        available = true;
 }
 
+// Return the current availability status of the book.
 bool Book::isAvailable() const
 {
-	return status;
+        return available;
 }
 
+// Retrieve the unique identifier for the book.
 int Book::getID() const
 {
-	return bookID;
+        return bookID;
 }
 
+// Retrieve the title of the book.
 std::string Book::getTitle() const
 {
-	return title;
+        return title;
 }
 
+// Retrieve the author of the book.
 std::string Book::getAuthor() const
 {
-	return author;
+        return author;
 }
